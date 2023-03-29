@@ -10,6 +10,7 @@ function requestHandler(req, res)
     
     let filePath;
 
+    // for routing the diffrent routs
     switch(req.url)
     {
         case '/':
@@ -22,6 +23,7 @@ function requestHandler(req, res)
             filePath='./404.html';
     }
 
+    // file system module
     fs.readFile(filePath, function(err, data)
     {
         if(err)
@@ -36,6 +38,7 @@ function requestHandler(req, res)
 // creating server
 const server=http.createServer(requestHandler);
 
+//for listing the server in port 
 server.listen(port, function(err)
 {
     if(err)
@@ -45,6 +48,6 @@ server.listen(port, function(err)
     }
     else
     {
-        console.log("server is running in port number ", port);
+        console.log("server is running in port number! ", port);
     }
 });
